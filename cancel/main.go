@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	fmt.Printf("os.Stdin: %v\n", os.Stdin)
 	// readline の設定（Terraform とほぼ同じ設定）
 	l, err := readline.NewEx(&readline.Config{
 		Prompt:            "> ",
