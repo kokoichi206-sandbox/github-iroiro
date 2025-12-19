@@ -1,11 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"strings"
-
-	"github.com/chzyer/readline"
 )
 
 func main() {
@@ -13,25 +12,12 @@ func main() {
 	fmt.Printf("os.Stdin.Fd(): %v\n", os.Stdin.Fd())
 	fmt.Printf("os.Stdin.Name(): %v\n", os.Stdin.Name())
 
-	// readline の設定（Terraform とほぼ同じ設定）
-	l, err := readline.NewEx(&readline.Config{
-		Prompt:            "> ",
-		InterruptPrompt:   "^C",
-		EOFPrompt:         "exit",
-		HistoryFile:       "/tmp/readline.tmp", // 履歴を保存
-		HistorySearchFold: true,
-		Stdin:             os.Stdin,
-		Stdout:            os.Stdout,
-		Stderr:            os.Stderr,
-	})
-	if err != nil {
-		panic(err)
-	}
-	defer l.Close()
+	buf := bufio.NewReader(os.Stdin)
 
 	for {
-		line, err := l.Readline()
-		if err != nil { // io.EOF または readline.ErrInterrupt
+		fmt.Print("> ")
+		line, err := buf.ReadString('\n')
+		if err != nil { // io.EOF または他のエラー
 			fmt.Printf("err: %v\n", err)
 			break
 		}
