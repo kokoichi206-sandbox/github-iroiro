@@ -20,6 +20,13 @@ jobs:
       - name: Check out
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
+      - name: Test cancel
+        timeout-minutes: 2
+        run: |
+            echo "Starting sleep..."
+            sleep 300
+            echo "Sleep finished"
+
       - name: Configure Git for private modules
         run: |
           git config --global url."https://${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
