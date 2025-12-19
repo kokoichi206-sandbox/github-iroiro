@@ -23,9 +23,7 @@ jobs:
       - name: Test cancel
         timeout-minutes: 2
         run: |
-            echo "Starting sleep..."
-            sleep 300
-            echo "Sleep finished"
+          cat  # stdin を待つ
 
       - name: Configure Git for private modules
         run: |
