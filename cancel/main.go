@@ -28,6 +28,7 @@ func main() {
 	for {
 		line, err := l.Readline()
 		if err != nil { // io.EOF または readline.ErrInterrupt
+			fmt.Printf("err: %v\n", err)
 			break
 		}
 
