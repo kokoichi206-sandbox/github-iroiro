@@ -9,7 +9,10 @@ import (
 )
 
 func main() {
-	fmt.Printf("os.Stdin: %v\n", os.Stdin)
+	fmt.Printf("os.Stdin: %+v\n", os.Stdin)
+	fmt.Printf("os.Stdin.Fd(): %v\n", os.Stdin.Fd())
+	fmt.Printf("os.Stdin.Name(): %v\n", os.Stdin.Name())
+
 	// readline の設定（Terraform とほぼ同じ設定）
 	l, err := readline.NewEx(&readline.Config{
 		Prompt:            "> ",
