@@ -50,4 +50,15 @@ jobs:
         run: go build -o app main.go
 
       - name: Go run (built binary via exec)
-        run: exec ./app
+        run: |
+          # バックグラウンドで定期的にプロセスツリーを表示
+          (
+            while true; do
+              echo "=== Process tree at $(date) ==="
+              ps -ef --forest || ps -ef
+              echo ""
+              sleep 5
+            done
+          ) &
+
+          exec ./app

@@ -1,0 +1,138 @@
+Terraform PID: 1978
+=== Process tree at Sat Dec 20 11:50:21 UTC 2025 ===
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           2       0  0 11:49 ?        00:00:00 [kthreadd]
+root           3       2  0 11:49 ?        00:00:00  \_ [pool_workqueue_release]
+root           4       2  0 11:49 ?        00:00:00  \_ [kworker/R-rcu_gp]
+root           5       2  0 11:49 ?        00:00:00  \_ [kworker/R-sync_wq]
+root           6       2  0 11:49 ?        00:00:00  \_ [kworker/R-slub_flushwq]
+root           7       2  0 11:49 ?        00:00:00  \_ [kworker/R-netns]
+root           8       2  0 11:49 ?        00:00:00  \_ [kworker/0:0-events]
+root           9       2  0 11:49 ?        00:00:00  \_ [kworker/0:1-cgroup_destroy]
+root          10       2  0 11:49 ?        00:00:00  \_ [kworker/0:0H-events_highpri]
+root          11       2  0 11:49 ?        00:00:00  \_ [kworker/u8:0-ext4-rsv-conversion]
+root          12       2  0 11:49 ?        00:00:00  \_ [kworker/R-mm_percpu_wq]
+root          13       2  0 11:49 ?        00:00:00  \_ [rcu_tasks_rude_kthread]
+root          14       2  0 11:49 ?        00:00:00  \_ [rcu_tasks_trace_kthread]
+root          15       2  0 11:49 ?        00:00:00  \_ [ksoftirqd/0]
+root          16       2  0 11:49 ?        00:00:00  \_ [rcu_sched]
+root          17       2  0 11:49 ?        00:00:00  \_ [rcu_exp_par_gp_kthread_worker/0]
+root          18       2  0 11:49 ?        00:00:00  \_ [rcu_exp_gp_kthread_worker]
+root          19       2  0 11:49 ?        00:00:00  \_ [migration/0]
+root          20       2  0 11:49 ?        00:00:00  \_ [idle_inject/0]
+root          21       2  0 11:49 ?        00:00:00  \_ [cpuhp/0]
+root          22       2  0 11:49 ?        00:00:00  \_ [cpuhp/1]
+root          23       2  0 11:49 ?        00:00:00  \_ [idle_inject/1]
+root          24       2  0 11:49 ?        00:00:00  \_ [migration/1]
+root          25       2  0 11:49 ?        00:00:00  \_ [ksoftirqd/1]
+root          26       2  0 11:49 ?        00:00:00  \_ [kworker/1:0-events]
+root          27       2  0 11:49 ?        00:00:00  \_ [kworker/1:0H-events_highpri]
+root          28       2  0 11:49 ?        00:00:00  \_ [kdevtmpfs]
+root          29       2  0 11:49 ?        00:00:00  \_ [kworker/R-inet_frag_wq]
+root          30       2  0 11:49 ?        00:00:00  \_ [kauditd]
+root          31       2  0 11:49 ?        00:00:00  \_ [khungtaskd]
+root          32       2  0 11:49 ?        00:00:00  \_ [kworker/u8:1-async]
+root          33       2  0 11:49 ?        00:00:00  \_ [oom_reaper]
+root          34       2  0 11:49 ?        00:00:00  \_ [kworker/R-writeback]
+root          35       2  0 11:49 ?        00:00:00  \_ [kworker/u8:2-async]
+root          36       2  0 11:49 ?        00:00:00  \_ [kcompactd0]
+root          37       2  0 11:49 ?        00:00:00  \_ [ksmd]
+root          38       2  0 11:49 ?        00:00:00  \_ [khugepaged]
+root          39       2  0 11:49 ?        00:00:00  \_ [kworker/R-kintegrityd]
+root          40       2  0 11:49 ?        00:00:00  \_ [kworker/R-kblockd]
+root          41       2  0 11:49 ?        00:00:00  \_ [kworker/R-blkcg_punt_bio]
+root          42       2  0 11:49 ?        00:00:00  \_ [irq/9-acpi]
+root          43       2  0 11:49 ?        00:00:00  \_ [kworker/1:1-events]
+root          44       2  0 11:49 ?        00:00:00  \_ [kworker/R-tpm_dev_wq]
+root          45       2  0 11:49 ?        00:00:00  \_ [kworker/R-ata_sff]
+root          46       2  0 11:49 ?        00:00:00  \_ [kworker/R-md]
+root          47       2  0 11:49 ?        00:00:00  \_ [kworker/R-md_bitmap]
+root          48       2  0 11:49 ?        00:00:00  \_ [kworker/R-edac-poller]
+root          49       2  0 11:49 ?        00:00:00  \_ [kworker/R-hv_vmbus_con]
+root          50       2  0 11:49 ?        00:00:00  \_ [kworker/R-hv_vmbus_rescind]
+root          51       2  0 11:49 ?        00:00:00  \_ [kworker/R-hv_pri_chan]
+root          52       2  0 11:49 ?        00:00:00  \_ [kworker/R-hv_sub_chan]
+root          53       2  0 11:49 ?        00:00:00  \_ [kworker/R-devfreq_wq]
+root          54       2  0 11:49 ?        00:00:00  \_ [watchdogd]
+root          55       2  0 11:49 ?        00:00:00  \_ [kworker/1:1H-kblockd]
+root          56       2  0 11:49 ?        00:00:00  \_ [kswapd0]
+root          57       2  0 11:49 ?        00:00:00  \_ [ecryptfs-kthread]
+root          58       2  0 11:49 ?        00:00:00  \_ [kworker/R-kthrotld]
+root          59       2  0 11:49 ?        00:00:00  \_ [kworker/R-nfit]
+root          60       2  0 11:49 ?        00:00:00  \_ [scsi_eh_0]
+root          61       2  0 11:49 ?        00:00:00  \_ [scsi_eh_1]
+root          62       2  0 11:49 ?        00:00:00  \_ [kworker/u8:3-ext4-rsv-conversion]
+root          63       2  0 11:49 ?        00:00:00  \_ [scsi_eh_2]
+root          64       2  0 11:49 ?        00:00:00  \_ [kworker/R-scsi_tmf_1]
+root          65       2  0 11:49 ?        00:00:00  \_ [kworker/R-scsi_tmf_0]
+root          66       2  0 11:49 ?        00:00:00  \_ [kworker/R-scsi_tmf_2]
+root          67       2  0 11:49 ?        00:00:00  \_ [kworker/R-nvme-wq]
+root          68       2  1 11:49 ?        00:00:00  \_ [kworker/u8:4-events_power_efficient]
+root          69       2  0 11:49 ?        00:00:00  \_ [kworker/R-nvme-reset-wq]
+root          70       2  0 11:49 ?        00:00:00  \_ [kworker/R-nvme-delete-wq]
+root          71       2  0 11:49 ?        00:00:00  \_ [kworker/R-nvme-auth-wq]
+root          72       2  0 11:49 ?        00:00:00  \_ [scsi_eh_3]
+root          73       2  0 11:49 ?        00:00:00  \_ [kworker/R-scsi_tmf_3]
+root          74       2  0 11:49 ?        00:00:00  \_ [scsi_eh_4]
+root          75       2  0 11:49 ?        00:00:00  \_ [kworker/R-scsi_tmf_4]
+root          76       2  0 11:49 ?        00:00:00  \_ [kworker/1:2-cgroup_destroy]
+root          77       2  0 11:49 ?        00:00:00  \_ [kworker/u8:5-flush-8:0]
+root          78       2  0 11:49 ?        00:00:00  \_ [kworker/u8:6-ext4-rsv-conversion]
+root          79       2  0 11:49 ?        00:00:00  \_ [kworker/u8:7]
+root          80       2  0 11:49 ?        00:00:00  \_ [hv_balloon]
+root          81       2  0 11:49 ?        00:00:00  \_ [kworker/R-mld]
+root          82       2  0 11:49 ?        00:00:00  \_ [kworker/0:1H-kblockd]
+root          83       2  0 11:49 ?        00:00:00  \_ [kworker/R-ipv6_addrconf]
+root          90       2  0 11:49 ?        00:00:00  \_ [kworker/R-kstrp]
+root          92       2  0 11:49 ?        00:00:00  \_ [kworker/0:2-cgroup_destroy]
+root          93       2  0 11:49 ?        00:00:00  \_ [kworker/u9:0]
+root         106       2  0 11:49 ?        00:00:00  \_ [jbd2/sda1-8]
+root         107       2  0 11:49 ?        00:00:00  \_ [kworker/R-ext4-rsv-conversion]
+root         177       2  0 11:49 ?        00:00:00  \_ [kworker/R-kmpathd]
+root         178       2  0 11:49 ?        00:00:00  \_ [kworker/R-kmpath_handlerd]
+root         213       2  0 11:49 ?        00:00:00  \_ [kworker/1:3]
+root         224       2  0 11:49 ?        00:00:00  \_ [kworker/0:3-events]
+root         235       2  0 11:49 ?        00:00:00  \_ [psimon]
+root         309       2  0 11:49 ?        00:00:00  \_ [kworker/R-cryptd]
+root         346       2  0 11:49 ?        00:00:00  \_ [jbd2/sda16-8]
+root         347       2  0 11:49 ?        00:00:00  \_ [kworker/R-ext4-rsv-conversion]
+root         889       2  0 11:49 ?        00:00:00  \_ [kworker/R-tls-strp]
+root        1771       2  0 11:49 ?        00:00:00  \_ [psimon]
+root           1       0  7 11:49 ?        00:00:03 /sbin/init
+root         156       1  0 11:49 ?        00:00:00 /usr/lib/systemd/systemd-journald
+root         218       1  0 11:49 ?        00:00:00 /sbin/multipathd -d -s
+root         221       1  0 11:49 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root         329       1  0 11:49 ?        00:00:00 /usr/lib/linux-tools/6.11.0-1018-azure/hv_kvp_daemon -n
+systemd+     401       1  0 11:49 ?        00:00:00 /usr/lib/systemd/systemd-resolved
+root         501       1  0 11:49 ?        00:00:00 /usr/sbin/haveged --Foreground --verbose=1
+systemd+     635       1  0 11:49 ?        00:00:00 /usr/lib/systemd/systemd-networkd
+message+     696       1  0 11:49 ?        00:00:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         701       1  0 11:49 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         703       1  0 11:49 ?        00:00:00 php-fpm: master process (/etc/php/8.3/fpm/php-fpm.conf)
+www-data     965     703  0 11:49 ?        00:00:00  \_ php-fpm: pool www
+www-data     971     703  0 11:49 ?        00:00:00  \_ php-fpm: pool www
+polkitd      708       1  0 11:49 ?        00:00:00 /usr/lib/polkit-1/polkitd --no-debug
+root         726       1  0 11:49 ?        00:00:00 /usr/lib/systemd/systemd-logind
+root         733       1  0 11:49 ?        00:00:00 /usr/libexec/udisks2/udisksd
+root         734       1  0 11:49 ?        00:00:00 /usr/bin/python3 -u /usr/sbin/waagent -daemon
+root         946     734  2 11:49 ?        00:00:01  \_ /usr/bin/python3 -u bin/WALinuxAgent-2.15.0.1-py3.12.egg -run-exthandlers
+root         748       1  0 11:49 ?        00:00:00 /usr/sbin/cron -f -P
+root         761       1  0 11:49 ?        00:00:00 /usr/bin/containerd
+root         786       1  0 11:49 ttyS0    00:00:00 /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 - vt220
+root         793       1  0 11:49 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear - linux
+_chrony      824       1  0 11:49 ?        00:00:00 /usr/sbin/chronyd -F 1
+_chrony      827     824  0 11:49 ?        00:00:00  \_ /usr/sbin/chronyd -F 1
+root         868       1  0 11:49 ?        00:00:00 /usr/sbin/ModemManager
+runner       875       1  0 11:49 ?        00:00:00 /usr/lib/systemd/systemd --user
+runner       886     875  0 11:49 ?        00:00:00  \_ (sd-pam)
+syslog       877       1  0 11:49 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         970       1  0 11:49 ?        00:00:00 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+runner      1773       1  0 11:49 ?        00:00:00 /opt/hca/hosted-compute-agent
+root        1785    1773  0 11:49 ?        00:00:00  \_ sudo -E -n /tmp/provjobd2638103238
+root        1787    1785  0 11:49 ?        00:00:00  |   \_ /tmp/provjobd2638103238
+runner      1808    1773  6 11:50 ?        00:00:01  \_ /home/runner/actions-runner/cached/bin/Runner.Listener run
+runner      1823    1808 22 11:50 ?        00:00:03      \_ /home/runner/actions-runner/cached/bin/Runner.Worker spawnclient 142 145
+runner      1976    1823  0 11:50 ?        00:00:00          \_ /usr/bin/bash -e /home/runner/work/_temp/e6c0bf6b-54bc-4fdc-900b-feb8307ed658.sh
+runner      1977    1976  0 11:50 ?        00:00:00              \_ /usr/bin/bash -e /home/runner/work/_temp/e6c0bf6b-54bc-4fdc-900b-feb8307ed658.sh
+runner      1980    1977  0 11:50 ?        00:00:00              |   \_ ps -ef --forest
+runner      1978    1976  0 11:50 ?        00:00:00              \_ terraform apply -target=module.lambda.aws_ecr_repository.lambda -target=module.lambda.aws_ecr_lifecycle_policy.lambda -target=module.lambda.aws_ecr_repository.python_lambda -target=module.lambda.aws_ecr_lifecycle_policy.python_lambda
