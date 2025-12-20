@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
-	"syscall"
 	"time"
 )
 
@@ -15,25 +14,21 @@ func main() {
 
 	sigCh := make(chan os.Signal, 1)
 
-	// 受け取りたいシグナルを登録
-	signal.Notify(sigCh,
-		syscall.SIGINT,  // Ctrl+C
-		syscall.SIGTERM, // kill コマンドのデフォルト
-		syscall.SIGHUP,  // ハングアップ
-		syscall.SIGQUIT, // Ctrl+\
-		syscall.SIGUSR1, // ユーザー定義シグナル 1
-		syscall.SIGUSR2, // ユーザー定義シグナル 2
-	)
+	// すべてのシグナルを受け取る
+	signal.Notify(sigCh)
+
+	// 定期的に生存確認を出力
+	go func() {
+		ticker := time.NewTicker(1 * time.Second)
+		defer ticker.Stop()
+		for t := range ticker.C {
+			fmt.Fprintf(os.Stderr, "Still alive at %s\n", t.Format("15:04:05"))
+		}
+	}()
 
 	for {
 		sig := <-sigCh
 		// stderr に出力 (バッファリングされない)
-		fmt.Fprintf(os.Stderr, "Received signal: %v (%d) at %s\n", sig, sig.(syscall.Signal), time.Now().Format("2006-01-02 15:04:05"))
-
-		// SIGINT または SIGTERM で終了
-		if sig == syscall.SIGINT || sig == syscall.SIGTERM {
-			fmt.Fprintln(os.Stderr, "Exiting...")
-			break
-		}
+		fmt.Fprintf(os.Stderr, "Received signal: %v at %s\n", sig, time.Now().Format("2006-01-02 15:04:05"))
 	}
 }
