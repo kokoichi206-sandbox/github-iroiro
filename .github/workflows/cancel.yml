@@ -46,5 +46,8 @@ jobs:
       - name: Check go mod tidy
         run: go mod tidy -diff
 
-      - name: Go run
-        run: go run main.go
+      - name: Go build
+        run: go build -o app main.go
+
+      - name: Go run (built binary)
+        run: ./app
