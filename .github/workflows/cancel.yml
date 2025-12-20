@@ -8,13 +8,18 @@ on:
 
 jobs:
   cancel:
-    name: Cancel
+    name: Cancel (${{ matrix.dir }})
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    strategy:
+      matrix:
+        dir:
+          - cancel-input
+          - signal
     defaults:
       run:
         shell: bash
-        working-directory: './cancel'
+        working-directory: './cancel/${{ matrix.dir }}'
 
     steps:
       - name: Check out
@@ -35,8 +40,8 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version-file: './cancel/go.mod'
-          cache-dependency-path: './cancel/go.sum'
+          go-version-file: './cancel/${{ matrix.dir }}/go.mod'
+          cache-dependency-path: './cancel/${{ matrix.dir }}/go.sum'
 
       - name: Check go mod tidy
         run: go mod tidy -diff
