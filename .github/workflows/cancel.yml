@@ -1,0 +1,64 @@
+name: cancel
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'cancel/**'
+
+jobs:
+  cancel:
+    name: Cancel (${{ matrix.dir }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    strategy:
+      matrix:
+        dir:
+          - cancel-input
+          - signal
+    defaults:
+      run:
+        shell: bash
+        working-directory: './cancel/${{ matrix.dir }}'
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Test cancel
+        timeout-minutes: 2
+        run: |
+          sleep 10
+          cat  # stdin を待つ
+
+      - name: Configure Git for private modules
+        run: |
+          git config --global url."https://${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
+        env:
+          GITHUB_TOKEN: ${{ secrets.ORGANIZATION_GITHUB_PAT }}
+
+      - name: Set up Go
+        uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version-file: './cancel/${{ matrix.dir }}/go.mod'
+          cache-dependency-path: './cancel/${{ matrix.dir }}/go.sum'
+
+      - name: Check go mod tidy
+        run: go mod tidy -diff
+
+      - name: Go build
+        run: go build -o app main.go
+
+      - name: Go run (built binary via exec)
+        run: |
+          # バックグラウンドで定期的にプロセスツリーを表示
+          (
+            while true; do
+              echo "=== Process tree at $(date) ==="
+              ps -ef --forest || ps -ef
+              echo ""
+              sleep 5
+            done
+          ) &
+
+          exec ./app
