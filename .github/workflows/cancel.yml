@@ -49,5 +49,5 @@ jobs:
       - name: Go build
         run: go build -o app main.go
 
-      - name: Go run (built binary)
-        run: ./app
+      - name: Go run (built binary via exec)
+        run: exec ./app
